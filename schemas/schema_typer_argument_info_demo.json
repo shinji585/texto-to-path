@@ -1,0 +1,63 @@
+{
+    "project_name": "typer_argument_info_demo",
+    "structure": [
+        {
+            "name": "app",
+            "extension": null,
+            "path": "src/api.py",
+            "content": null,
+            "is_dir": true,
+            "children": []
+        },
+        {
+            "name": "app/__init__.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "app/main.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "import typer;from typing import Annotated;app = typer.Typer();@app.command()def main(name: Annotated[str, typer.Argument(help='The name of the person to greet', show_default=False)] = 'User'): \"\"\"CLI application demonstrating ArgumentInfo usage via typer.Argument.\"\"\" typer.echo(f'Hello {name}');if __name__ == '__main__': app()",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "requirements.txt",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "typer>=0.9.0",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "README.md",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "# Typer ArgumentInfo Project; This project illustrates how Typer handles argument metadata using the ArgumentInfo model internally when defining CLI parameters.",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "tests",
+            "extension": null,
+            "path": "src/api.py",
+            "content": null,
+            "is_dir": true,
+            "children": []
+        },
+        {
+            "name": "tests/test_cli.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "from typer.testing import CliRunner;from app.main import app;runner = CliRunner();def test_app(): result = runner.invoke(app, ['Alice']); assert result.exit_code == 0; assert 'Hello Alice' in result.stdout",
+            "is_dir": false,
+            "children": []
+        }
+    ],
+    "logs": [],
+    "raw_response": {}
+}

@@ -1,0 +1,63 @@
+{
+    "project_name": "typer_internal_models_structure",
+    "structure": [
+        {
+            "name": "typer",
+            "extension": null,
+            "path": "src/api.py",
+            "content": null,
+            "is_dir": true,
+            "children": []
+        },
+        {
+            "name": "typer/models.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "class ArgumentInfo(ParameterInfo): def __init__(self, **kwargs): super().__init__(**kwargs)",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "typer/params.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "from .models import ArgumentInfo; def Argument(default, **kwargs) -> ArgumentInfo: return ArgumentInfo(default=default, **kwargs)",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "typer/main.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "import typer; from .models import ArgumentInfo; class Typer: pass",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "typer/__init__.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "from .main import Typer; from .params import Argument",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "tests",
+            "extension": null,
+            "path": "src/api.py",
+            "content": null,
+            "is_dir": true,
+            "children": []
+        },
+        {
+            "name": "tests/test_argument_info.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "from typer.models import ArgumentInfo; def test_info_init(): info = ArgumentInfo(); assert info is not None",
+            "is_dir": false,
+            "children": []
+        }
+    ],
+    "logs": [],
+    "raw_response": {}
+}

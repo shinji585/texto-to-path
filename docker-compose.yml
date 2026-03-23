@@ -1,0 +1,20 @@
+services:
+  app: 
+    build: .
+    # entrypoint: ["python","main.py"]
+    volumes:
+      - .:/app
+      - /mnt/c/Users/User/Desktop:/app/output
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - REDIS_HOST=redis
+      - PYTHONPATH=/app/src
+
+  redis: 
+    image: redis:alpine
+    ports:
+      - "6379:6379"

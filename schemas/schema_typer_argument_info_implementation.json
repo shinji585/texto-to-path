@@ -1,0 +1,47 @@
+{
+    "project_name": "typer_argument_info_implementation",
+    "structure": [
+        {
+            "name": "app",
+            "extension": null,
+            "path": "src/api.py",
+            "content": null,
+            "is_dir": true,
+            "children": []
+        },
+        {
+            "name": "app/main.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "import typer; app = typer.Typer(); @app.command() def main(user_id: str = typer.Argument(..., help='The unique identifier for the user')): typer.echo(f'Processing ID: {user_id}'); if __name__ == '__main__': app()",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "app/models_inspector.py",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "from typer.models import ArgumentInfo; def inspect_arg_info(obj: ArgumentInfo): print(f'Default: {obj.default}'); print(f'Help: {obj.help}'); if __name__ == '__main__': info = ArgumentInfo(default='example', help='A sample help text'); inspect_arg_info(info)",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "requirements.txt",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "typer>=0.9.0",
+            "is_dir": false,
+            "children": []
+        },
+        {
+            "name": "README.md",
+            "extension": null,
+            "path": "src/api.py",
+            "content": "# Typer ArgumentInfo Project Sample",
+            "is_dir": false,
+            "children": []
+        }
+    ],
+    "logs": [],
+    "raw_response": {}
+}
